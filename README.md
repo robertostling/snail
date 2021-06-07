@@ -12,8 +12,11 @@ the instruction pointer is stored in RAM.
 
 ![snail CPU schematic](logisim/snail.png)
 
-A schematic can be found in `logisim/serial.circ`. The main design features
-can be summarized as follows:
+The schematic in logisim-evolution format can be found in
+`logisim/serial.circ`. Note that a few details are different from the physical
+implementation, in particular the RAM interface is a bit different due to
+limitations of the RAM component in logisim.
+The main design features can be summarized as follows:
 
     * Serial design, all microarchitecture registers are implemented as
       shift registers
