@@ -1,0 +1,35 @@
+A register: 2*74HC164
+X register: 2*74HC164
+T register: 74HC165
+Microcode: 2*2864
+State register: 74LS273 (check that 2864 EEPROM accepts TTL inputs)
+RAM: 61512AK-15
+XH buffer: 74HCT245 (74LS245 should be OK)
+XL output latch: 74HC573
+
+
+Signals:
+
+SHX SHA SHT     --
+X A             --
+LOAD            ~RE
+STORE           ~WE
+
+Mappings:
+
+T INH = ~SHT
+T SH = ~LOAD
+~OE = ~LOAD
+
+~CLK = NOT CLK
+X CLK = ~CLK NAND SHX
+A CLK = ~CLK NAND SHA
+~WE = CLK NAND STORE
+
+Inputs needed from Arduino testbed:
+74HC164a    X, CLK X
+74HC165     T CLK INH, SHT
+74HC164c    A, CLK A
+74LS245     ~OE
+61512       ~WE, ~OE
+
