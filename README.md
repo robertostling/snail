@@ -14,6 +14,7 @@ the instruction pointer is stored in RAM.
 
 A schematic can be found in `logisim/serial.circ`. The main design features
 can be summarized as follows:
+
     * Serial design, all microarchitecture registers are implemented as
       shift registers
     * Microcode stored in 2 8kB EEPROMs
